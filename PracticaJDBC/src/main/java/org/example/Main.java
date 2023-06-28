@@ -23,7 +23,10 @@ public class Main {
                 staticFileConfig.aliasCheck = null;
             });
         });
-        app.start(8000);
+        app.start(7000);
+        app.get("/", ctx -> {
+            ctx.result("Esta es la segunda aplicacion");
+        });
         BootStrapServices.startDb();
         DataBaseServices.getInstancia().testConexion();
         BootStrapServices.crearTablas();
